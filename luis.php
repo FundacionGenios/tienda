@@ -1,12 +1,31 @@
 <?php 
 
-    $n1 = 0;
-    $n2 = 90;
+//practica de git y poo
 
-    if ($n1 > $n2) {
-        echo "El primer numero es mayor que el segundo.";
-    }else{
-        echo "El segundo numero es mayor que el primero.";
+class Producto{
+    public $nombre;
+    public $precio;
+    public $categoria;
+
+    function __construct($nombre,$precio,$categoria){
+        $this->nombre = $nombre;
+        $this->precio = $precio;
+        $this->categoria = $categoria;
     }
 
+    public function obtenerInfo($id){
+        echo "La informacion del producto ingresado con id" . " " . $id . " "  . "es:" . " " . $this->nombre . ", " . $this->precio . ", " . $this->categoria;
+        echo "<br>";
+    }
+
+    public function borrarInfo($id){
+        echo "El producto con el id:" . " " . $id . " " . "esta siendo eliminado...";
+        $this->nombre = "";
+        $this->precio = "";
+        $this->categoria = "";
+    }
+}
+
+$producto = new Producto('Doritos',5700,'Pasa bocas');
+ 
 ?>
